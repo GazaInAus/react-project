@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import  './index.scss'
 import {useMemo, useState} from "react";
+import Icon from "../../../../components/Icon";
 
 const DayBill = ({date, billList}) => {
     const dayResult = useMemo(() => {
@@ -21,7 +22,7 @@ const DayBill = ({date, billList}) => {
             <div className="header">
                 <div className="dateIcon">
                     <span className="date">{date}</span>
-                    //expand 有这个类名，展开的箭头朝上的样子
+                    {/*//expand 有这个类名，展开的箭头朝上的样子*/}
                     <span className={classNames('arrow', visible && 'expand')} onClick={()=> setVisible(!visible)}></span>
                 </div>
                 <div className="oneLineOverview">
@@ -45,6 +46,8 @@ const DayBill = ({date, billList}) => {
                 {billList.map(item => {
                     return (
                         <div className="bill" key="item.id">
+                            {/*渲染图标 , 课程DAY5- 10*/}
+                            {/*<Icon />*/}
                             <div className="detail">
                                 <div className="billType">{item.useFor}</div>
                             </div>
